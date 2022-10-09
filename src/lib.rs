@@ -1,1 +1,1 @@
-pub mod node_path;
+pub mod path;
