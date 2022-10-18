@@ -1,0 +1,19 @@
+{
+    "configurations": [
+        {
+            "type": "cargo",
+            "cargoArgs": ["fmt"],
+            "name": "fmt",
+        },
+        {
+            "type": "cargo",
+            "cargoArgs": ["clippy"],
+            "name": "clippy",
+        },
+        {
+            "type": "cargo",
+            "cargoArgs": ["test"],
+            "name": "test",
+        }
+    ]
+}
