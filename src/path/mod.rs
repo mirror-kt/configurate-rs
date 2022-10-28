@@ -86,7 +86,7 @@ impl<'s> AsRef<[&'s str]> for &NodePath<'s> {
     }
 }
 
-impl <'s> AsRef<NodePath<'s>> for &NodePath<'s> {
+impl<'s> AsRef<NodePath<'s>> for &NodePath<'s> {
     fn as_ref(&self) -> &NodePath<'s> {
         self
     }

@@ -1,4 +1,5 @@
-use std::{ops::Deref};
+use std::fmt::Debug;
+use std::ops::Deref;
 
 use super::NodePath;
 
@@ -40,7 +41,9 @@ impl<'s> NodePathBuf<'s> {
     /// assert_eq!(from_slice.as_slice(), &["foo", "bar"]);
     /// ```
     pub fn from_slice<S: AsRef<[&'s str]>>(s: S) -> Self {
-        Self { paths: s.as_ref().to_vec() }
+        Self {
+            paths: s.as_ref().to_vec(),
+        }
     }
 
     /// Creates a new `NodePathBuf` with a given capacity used to create the
@@ -108,7 +111,7 @@ impl<'s> AsRef<NodePath<'s>> for NodePathBuf<'s> {
     }
 }
 
-impl <'s> std::fmt::Debug for NodePathBuf<'s> {
+impl<'s> Debug for NodePathBuf<'s> {
     #[inline]
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         self.paths.fmt(f)
